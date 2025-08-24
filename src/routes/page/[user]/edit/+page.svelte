@@ -1,4 +1,6 @@
 <script lang="ts">
+  import Button from "../../../../components/Button.svelte";
+
     export let data;
 
     let {
@@ -26,7 +28,7 @@
 
 <div class="content">
     <h1>Edit Your Page</h1>
-    <form on:submit|preventDefault={submit}>
+    <form>
         <span id="username">{display_name} ({username})</span>
         <div>
             <label for="title">Name</label>
@@ -48,6 +50,14 @@
             <br/>
             <textarea id="links" bind:value={links}></textarea>
         </div>
-        <button type="submit">Save</button>
+        <Button action={submit}>Save</Button>
     </form>
 </div>
+
+<style>
+    textarea {
+        width: 100%;
+        height: 10vh;
+        resize: none;
+    }
+</style>

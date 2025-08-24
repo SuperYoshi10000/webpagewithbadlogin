@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { goto } from "$app/navigation";
-  import { redirect } from "@sveltejs/kit";
+  import Button from "../../components/Button.svelte";
 
     let username: string;
     let authentication: FileList;
@@ -13,22 +12,27 @@
             method: "POST",
             body: formData
         });
-        if (!response.ok) console.error("Login failed:", await response.text());
-        goto(`/page/${username}`);
+        if (!response.ok) {
+            const { error } = await response.json();
+            console.error("Login failed:", error);
+            alert(`Login failed: ${error}`);
+            return;
+        }
+        location.href = `/page/${username}`;
     }
 </script>
 
 <div class="content">
     <h1>Login</h1>
     <!-- svelte-ignore component_name_lowercase -->
-    <form on:submit|preventDefault={submit}>
+    <form>
         <label for="username">Username</label>
         <input type="text" id="username" bind:value={username} />
         <br/>
         <p>Upload your story for authentication. The story must be uploaded as a PDF.</p>
         <input type="file" id="authentication" accept=".pdf" bind:files={authentication} />
         <br/>
-        <button type="submit">Login</button>
+        <Button action={submit}>Log In</Button>
     </form>
     <p>Don't have an account? <a href="/signup">Sign up here</a>.</p>
 </div>

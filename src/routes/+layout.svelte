@@ -2,8 +2,10 @@
     import favicon from '$lib/assets/favicon.svg';
     import Header from '../components/Header.svelte';
 
-    let { children } = $props();
+    export let data;
 
+    export let children;
+    
     let date = new Date();
 </script>
 
@@ -11,7 +13,7 @@
     <link rel="icon" href={favicon} />
 </svelte:head>
 
-<Header />
+<Header data={data}/>
 <main>
     {@render children?.()}
 </main>
@@ -29,5 +31,8 @@
         position: relative;
         bottom: 0;
         width: 100%;
+    }
+    :global(*) {
+        font-family: Roboto, sans-serif;
     }
 </style>
