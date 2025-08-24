@@ -1,2 +1,7 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script>
+    import NavItem from "../components/NavItem.svelte";
+
+</script>
+<h1>Page Creator</h1>
+<p>Create a page</p>
+<NavItem href="/signup">Create a page</NavItem>
