@@ -5,5 +5,6 @@
     console.log(page.error)
 </script>
 
+<title>Error {status}</title>
 <h1>An error occurred</h1>
 <p>{status} - {message}</p>

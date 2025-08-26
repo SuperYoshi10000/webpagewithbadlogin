@@ -11,6 +11,7 @@
 
 </script>
 
+<title>{display_name}'s Page</title>
 <div class="content">
     <h1>{display_name} <span>({username})</span></h1>
     <h2>About Me</h2>

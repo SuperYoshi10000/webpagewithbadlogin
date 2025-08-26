@@ -23,6 +23,7 @@
     }
 </script>
 
+<title>Sign Up</title>
 <div class="content">
     <h1>Sign Up</h1>
     <!-- svelte-ignore component_name_lowercase -->

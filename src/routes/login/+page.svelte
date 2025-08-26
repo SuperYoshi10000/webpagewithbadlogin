@@ -22,8 +22,9 @@
     }
 </script>
 
+<title>Log In</title>
 <div class="content">
-    <h1>Login</h1>
+    <h1>Log In</h1>
     <!-- svelte-ignore component_name_lowercase -->
     <form>
         <label for="username">Username</label>

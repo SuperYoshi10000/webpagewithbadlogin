@@ -54,6 +54,7 @@
     </form>
 </div>
 
+<title>Editing {display_name}'s Page</title>
 <style>
     textarea {
         width: 100%;
