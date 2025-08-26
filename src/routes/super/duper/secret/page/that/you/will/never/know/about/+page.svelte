@@ -1,4 +1,6 @@
 <script lang="ts">
+    import Button from "../../../../../../../../../../../components/Button.svelte";
+
 
     async function send() {
         const formData = new FormData();
@@ -20,13 +22,13 @@
 <title>AI Test</title>
 <h1>AI Test</h1>
 <textarea bind:value={text}></textarea>
-<button on:click={send}>Send</button>
+<Button on:click={send}>Send</Button>
 <pre>{@html result}</pre>
 
 <style>
     textarea {
         width: 100%;
-        height: 50vh;
+        height: 20rem;
         resize: none;
     }
     pre {
