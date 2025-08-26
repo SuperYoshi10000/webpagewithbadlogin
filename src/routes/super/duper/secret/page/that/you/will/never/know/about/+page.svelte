@@ -5,6 +5,7 @@
     async function send() {
         const formData = new FormData();
         formData.append("text", text);
+        console.log("Sending", text);
         const response = await fetch("/super/duper/secret/page/that/you/will/never/know/about", {
             method: "POST",
             body: formData
