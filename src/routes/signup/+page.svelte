@@ -14,7 +14,7 @@
         });
         console.log(response);
         if (!response.ok) {
-            const { error } = await response.json();
+            const error = await response.text();
             console.error("Signup failed:", error);
             alert(`Signup failed: ${error}`);
             return;

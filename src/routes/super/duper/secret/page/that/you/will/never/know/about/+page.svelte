@@ -10,7 +10,12 @@
             method: "POST",
             body: formData
         });
-        if (!response.ok) console.error("Failed:", await response.text());
+        if (!response.ok) {
+            const error = await response.text();
+            console.error("Failed:", error);
+            alert(`Failed: ${error}`);
+            return;
+        }
         const json = await response.json();
         console.log(json);
         result = JSON.parse(json.data)[1];
