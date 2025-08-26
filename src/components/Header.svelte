@@ -21,6 +21,11 @@
 </header>
 
 <style>
+    header {
+        position: relative;
+        top: 0;
+        width: 100%;
+    }
     nav {
         background-color: #f0f0f0;
         display: flex;
