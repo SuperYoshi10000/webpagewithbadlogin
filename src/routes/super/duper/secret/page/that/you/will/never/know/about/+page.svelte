@@ -23,7 +23,7 @@
 <title>AI Test</title>
 <h1>AI Test</h1>
 <textarea bind:value={text}></textarea>
-<Button on:click={send}>Send</Button>
+<Button action={send}>Send</Button>
 <pre>{@html result}</pre>
 
 <style>
