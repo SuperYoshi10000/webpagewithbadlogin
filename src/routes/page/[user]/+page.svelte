@@ -13,11 +13,28 @@
 
 <div class="content">
     <h1>{display_name} <span>({username})</span></h1>
+    <h2>About Me</h2>
     <p>{about}</p>
+    <h2>My Page</h2>
     <div class="page-content">{@html pageHtml}</div>
+    <h2>Links</h2>
     <div class="links">
+        <ul>
         {#each links! as link}
-            <a href={link} target="_blank" rel="noopener noreferrer">{link}</a>
+            {@const href = /[\w.+-]+@[\w.-]+/.test(link) ? `mailto:${link}` : link}
+            <li><a href={href} target="_blank" rel="noopener noreferrer">{link}</a></li>
         {/each}
+        </ul>
     </div>
 </div>
+
+<style>
+    .page-content {
+        border: 1px solid #ccc;
+        padding: 1em;
+    }
+    .links {
+        margin-top: 1em;
+
+    }
+</style>
