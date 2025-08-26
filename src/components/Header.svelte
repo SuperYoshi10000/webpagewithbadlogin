@@ -5,10 +5,9 @@
     export let data: { sessionId?: string, username?: string };
 </script>
 
-<title>Page Creation Site</title>
 <header>
     <nav>
-        <span id="title">Page Creation Site</span>
+        <span id="title">Page Creator</span>
         <Button nav href="/">Home</Button>
         {#if data.sessionId}
             <Button nav href="/page/{data.username}">Your Page</Button>
