@@ -63,7 +63,7 @@ export async function createUser(username: string, content: string) {
     const existingUser = await getUser(username).catch(_ => null);
     if (existingUser) throw Error("User already exists");
     const hash = await bcrypt.hash(content, 10);
-    const {rows: [user]} = await client.query("INSERT INTO users (username, authentication_hash) VALUES ($1, $2) RETURNING *", [username, hash]);
+    const {rows: [user]} = await client.query("INSERT INTO users (username, authentication_hash, display_name) VALUES ($1, $2, $3) RETURNING *", [username, hash, username]);
     return createSession(user.id);
 }
 
