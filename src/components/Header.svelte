@@ -36,7 +36,6 @@
     }
     :global(nav > *) {
         width: 150px;
-        border-radius: 10px;
     }
 
     #title {

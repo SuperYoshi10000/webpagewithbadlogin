@@ -20,17 +20,27 @@
         background-color: #e0e0e0;
         padding: 0.5rem;
         min-width: 100px;
-        height: 2em;
         text-align: center;
         flex-direction: column;
         align-content: center;
         transition: 0.3s;
         text-decoration-line: none;
         color: black;
-        font-size: 1.2rem;
         border-bottom: 4px solid transparent;
         cursor: pointer;
+        display: inline-block;
+        border-radius: 10px;
     }
+    a.button:is(:global(nav > *)) {
+        height: 2em;
+        font-size: 1.2rem;
+    }
+    a.button:not(:global(nav > *)) {
+        height: 1.25em;
+        font-size: 1rem;
+        margin: 0.25em auto;
+    }
+
     a.button:hover {
         background-color: #d0d0d0;
     }
