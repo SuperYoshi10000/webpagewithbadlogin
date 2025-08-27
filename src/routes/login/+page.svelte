@@ -37,3 +37,11 @@
     </form>
     <p>Don't have an account? <a href="/signup">Sign up here</a>.</p>
 </div>
+
+<style>
+    div.content {
+        width: 50vw;
+        min-width: 300px;
+        margin: auto;
+    }
+</style>

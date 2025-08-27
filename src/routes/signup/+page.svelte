@@ -38,3 +38,11 @@
     </form>
     <p>Already have an account? <a href="/login">Log in here</a>.</p>
 </div>
+
+<style>
+    div.content {
+        width: 50vw;
+        min-width: 300px;
+        margin: auto;
+    }
+</style>
