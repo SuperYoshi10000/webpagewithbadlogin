@@ -30,6 +30,11 @@
 </div>
 
 <style>
+    div.content {
+        width: 50vw;
+        min-width: 300px;
+        margin: auto;
+    }
     .page-content {
         border: 1px solid #ccc;
         padding: 1em;

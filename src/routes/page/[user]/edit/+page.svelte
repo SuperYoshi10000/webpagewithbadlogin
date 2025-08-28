@@ -56,6 +56,11 @@
 
 <title>Editing {display_name}'s Page</title>
 <style>
+    div.content {
+        width: 50vw;
+        min-width: 300px;
+        margin: auto;
+    }
     textarea {
         width: 100%;
         height: 10vh;

@@ -50,6 +50,8 @@
         width: 100%;
         height: 2em;
         border-radius: 0.5em;
+        font-size: 1.1em;
+        padding: 0.25em;
     }
     input#authentication {
         align-content: center;
