@@ -1,4 +1,4 @@
 <script>
-    location.href = "/";
+    location.replace("/");
     location.reload();
 </script>
