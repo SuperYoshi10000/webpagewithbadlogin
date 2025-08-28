@@ -13,7 +13,7 @@
             body: formData
         });
         if (!response.ok) {
-            const { error } = await response.text();
+            const error = await response.text();
             console.error("Login failed:", error);
             alert(`Login failed: ${error}`);
             return;
