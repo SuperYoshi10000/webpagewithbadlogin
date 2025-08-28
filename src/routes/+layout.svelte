@@ -22,7 +22,7 @@
 </footer>
 
 <style>
-    body {
+    :global(body) {
         min-height: 100vh;
     }
     footer {
