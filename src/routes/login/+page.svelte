@@ -27,7 +27,7 @@
     <h1>Log In</h1>
     <!-- svelte-ignore component_name_lowercase -->
     <form>
-        <label for="username">Username</label>
+        <label for="username" placeholder="Username">Username</label>
         <input type="text" id="username" bind:value={username} />
         <br/>
         <p>Upload your story for authentication. The story must be uploaded as a PDF.</p>
@@ -43,5 +43,11 @@
         width: 50vw;
         min-width: 300px;
         margin: auto;
+    }
+    input {
+        margin: 10px 0;
+        width: 100%;
+        height: 2em;
+        border-radius: 0.5em;
     }
 </style>
