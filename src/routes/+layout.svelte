@@ -22,8 +22,11 @@
 </footer>
 
 <style>
+    body {
+        min-height: 100vh;
+    }
     footer {
-        position: relative;
+        position: sticky;
         bottom: 0;
         width: 100%;
     }
