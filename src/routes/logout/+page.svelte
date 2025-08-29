@@ -1,4 +1,7 @@
 <script>
-    location.replace("/");
-    location.reload();
+    import { onMount } from "svelte";
+    onMount(() => {
+        location.replace("/");
+        location.reload();
+    });
 </script>

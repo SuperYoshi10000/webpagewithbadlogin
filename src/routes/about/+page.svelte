@@ -10,7 +10,7 @@
     </p>
 </div>
 <style>
-    p {
+    div.content {
         width: 50vw;
         min-width: 300px;
         margin: auto;

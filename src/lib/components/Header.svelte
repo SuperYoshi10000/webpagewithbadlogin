@@ -11,6 +11,7 @@
             <span id="title">Page Creator</span>
             <Button nav href="/">Home</Button>
             <Button nav href="/about">About</Button>
+            <Button nav href="/users">Users</Button>
             {#if data.sessionId}
                 <Button nav href="/page/{data.username}">Your Page</Button>
                 <Button nav href="/page/{data.username}/edit">Edit Your Page</Button>
@@ -28,6 +29,7 @@
         position: relative;
         top: 0;
         width: 100%;
+        min-height: 4rem;
     }
     nav {
         background-color: #f0f0f0;
@@ -45,7 +47,7 @@
         display: inline-block;
         padding: 0.5em;
         min-width: 100px;
-        height: 2em;
+        height: 3rem;
         text-align: center;
         font-weight: bold;
         font-size: 1.25em;

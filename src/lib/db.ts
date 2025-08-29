@@ -75,6 +75,12 @@ export async function authenticateUser(username: string, content: string) {
     return createSession(user.id);
 }
 
+export async function updateAuthentication(userId: number, content: string) {
+    const hash = await bcrypt.hash(content, 10);
+    const result = await client.query("UPDATE users SET authentication_hash = $1, updated_at = NOW() WHERE id = $2", [hash, userId]);
+    return (result.rowCount ?? 0) > 0;
+}
+
 export async function getUser<C extends (keyof User)[] = [Exclude<keyof User, "authentication_hash">]>(name: string, columns?: C): Promise<{ [K in C[number]]: Required<User>[K] }>;
 export async function getUser<C extends (keyof User)[] = [Exclude<keyof User, "authentication_hash">]>(id: number, columns?: C): Promise<{ [K in C[number]]: Required<User>[K] }>;
 export async function getUser<C extends (keyof User)[] = [Exclude<keyof User, "authentication_hash">]>(
@@ -102,6 +108,14 @@ async function createSession(userId: number) {
     await client.query("INSERT INTO sessions (user_id, session_id) VALUES ($1, $2)", [userId, sessionId]);
     return sessionId;
 }
+export async function deleteSession(sessionId: string) {
+    const result = await client.query("DELETE FROM sessions WHERE session_id = $1", [sessionId]);
+    return (result.rowCount ?? 0) > 0;
+}
+export async function deleteAllSessions(userId: number) {
+    const result = await client.query("DELETE FROM sessions WHERE user_id = $1", [userId]);
+    return result.rowCount;
+}
 
 export async function updatePage(username: string, display_name: string, about: string, page_content: string, links: string) {
     await client.query(`
@@ -110,4 +124,14 @@ export async function updatePage(username: string, display_name: string, about: 
         WHERE username = $1;    
     `, [username, display_name, about, page_content, links]);
     console.log(`Updated page for user ${username}`);
+}
+
+export async function getAllUsers() {
+    const {rows: users} = await client.query("SELECT id, username, display_name, profile_picture_url FROM users");
+    return users as {
+        id: number;
+        username: string;
+        display_name: string;
+        profile_picture_url: string;
+    }[];
 }

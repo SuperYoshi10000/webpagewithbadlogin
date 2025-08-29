@@ -2,10 +2,10 @@ import * as db from "$lib/db";
 import { redirect } from "@sveltejs/kit";
 
 export async function load({ cookies }) {
-    const sessionId = cookies.get("session_id");
-    if (sessionId) {
+    const userId = (await db.getUserFromSession(cookies))?.id;
+    if (userId) {
         cookies.delete("session_id", { path: "/" });
-        await db.deleteSession(sessionId);
+        await db.deleteAllSessions(userId);
     }
     redirect(303, "/");
 }
