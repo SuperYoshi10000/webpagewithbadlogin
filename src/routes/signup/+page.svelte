@@ -31,7 +31,7 @@
         <label for="username" placeholder="Username">Username</label>
         <input type="text" id="username" bind:value={username} />
         <br/>
-        <p>Upload your story that you want to use for authentication. The story must be uploaded as a PDF.</p>
+        <label for="authentication">Upload your story that you want to use for authentication. The story must be uploaded as a PDF.</label>
         <input type="file" id="authentication" accept=".pdf" bind:files={authentication} />
         <br/>
         <Button action={submit}>Sign Up</Button>

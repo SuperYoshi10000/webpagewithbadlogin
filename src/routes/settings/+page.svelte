@@ -28,6 +28,7 @@
     <form>
         <label for="authentication-old">Upload your old story as a PDF.</label>
         <input type="file" id="authentication-old" accept=".pdf" bind:files={authenticationOld} />
+        <br/>
         <label for="authentication-new">Upload your new story as a PDF.</label>
         <input type="file" id="authentication-new" accept=".pdf" bind:files={authenticationNew} />
         <br/>
